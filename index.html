@@ -327,7 +327,7 @@ The extent to which these strategies generalise across diverse household tasks i
           <p>
             We fine-tuned the <a href="https://github.com/IliaLarchenko/behavior-1k-solution" target="_blank" rel="noopener">winner’s π0.5 model</a> and reached a Q-score of 0.39 on the public test set of <a href="https://behavior.stanford.edu/index.html" target="_blank" rel="noopener"><span class="nowrap">BEHAVIOR-1K</span></a>.
 With this model we systematically evaluate previously proposed inference and data-collection strategies in a paired design across all 100 tasks.
-Doubling the replanning frequency decreases the Q-score by 0.16.
+Doubling the replanning frequency decreases the Q-score by 0.17.
 The inherited 1.3× playback speed-up remains beneficial, while reducing denoising from twenty steps to one and removing overlap inpainting cause no detectable loss at the resolution of our evaluation.
 For data collection, snapshot-based restarts reduce simulation-step consumption by 29–43% without changing the success rate.
 These results show that proposed strategies do not transfer uniformly.
@@ -491,15 +491,16 @@ Phase 2 was not run with one fixed recipe. The rollout share, the per-task share
 
   The plot draws the <strong>95% confidence interval (CI)</strong> of ΔQ and Δ success rate.
 
-  <span class="c-hurt">Red</span> marks an interval that lies entirely below zero, so the change hurts.
+  <span class="c-hurt">Red</span> marks a setting where at least one of its two intervals, ΔQ or Δ success rate, lies entirely below zero, so the change hurts.
 
-  <span class="c-good">Green</span> marks one that lies entirely above zero, so the change helps.
+  <span class="c-good">Green</span> marks one where at least one interval lies entirely above zero, so the change helps.
 
-  <span class="c-null">Grey</span> marks one that contains zero.
+  <span class="c-null">Grey</span> marks one where both intervals contain zero.
 
   <strong><em>ΔSteps</em></strong> is the change in mean simulation steps per episode.
 
-  The verdict <strong><em>n.s.</em></strong> means not significant: the 95% CI of ΔQ contains zero, so the data cannot tell a small effect from no effect at this sample size.
+  The verdict <strong><em>n.s.</em></strong> means not significant: the 95% CIs of both ΔQ and Δ success rate contain zero, so the data cannot tell a small effect from no effect at this sample size.
+  A verdict such as <strong><em>hurts</em></strong> needs only one of the two intervals to lie entirely below zero. For gripper snap, it comes from the success-rate interval alone.
 
   Click a row to open its details below.</p>
 <div class="tab-toggle-row"><div class="metric-toggle" role="group" aria-label="Metric"><button type="button" class="is-active" data-metric="q" aria-pressed="true">ΔQ</button><button type="button" data-metric="sr" aria-pressed="false">Δ success rate</button></div></div>
@@ -529,130 +530,130 @@ Phase 2 was not run with one fixed recipe. The rollout share, the per-task share
 </tr><tr class="first link" data-href="#replan"><td class="set">Action-chunk execution horizon</td>
 <td class="c chg">26</td>
 <td class="c chg">13</td>
-<td class="num q sig-hurt">−0.162 ± 0.033</td>
-<td class="plot"><svg class="ci m-q k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.162  (95% CI -0.226 to -0.097)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="30.3" y1="20.0" x2="140.1" y2="20.0" class="bar"/><circle cx="85.2" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.110  (95% CI -0.170 to -0.049)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="77.9" y1="20.0" x2="180.7" y2="20.0" class="bar"/><circle cx="129.3" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-hurt">−0.165 ± 0.032</td>
+<td class="plot"><svg class="ci m-q k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.165  (95% CI -0.228 to -0.102)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="28.9" y1="20.0" x2="135.6" y2="20.0" class="bar"/><circle cx="82.2" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.110  (95% CI -0.171 to -0.049)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="77.4" y1="20.0" x2="180.6" y2="20.0" class="bar"/><circle cx="129.0" cy="20.0" r="5" class="pt"/></svg>
 </td>
 <td class="num">−11.0 ± 3.1</td>
-<td class="num">+753</td>
+<td class="num">+752</td>
 <td class="c v-hurt">hurts</td>
 <td class="go"><a href="#replan" aria-label="details">›</a></td>
 </tr><tr class="link" data-href="#fullchunk"><td class="set"></td>
 <td class="c chg">26</td>
 <td class="c chg">30</td>
-<td class="num q sig-null">−0.003 ± 0.019</td>
-<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.003  (95% CI -0.040 to +0.035)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="188.5" y1="20.0" x2="252.3" y2="20.0" class="bar"/><circle cx="220.0" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.003  (95% CI -0.040 to +0.046)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="188.5" y1="20.0" x2="261.6" y2="20.0" class="bar"/><circle cx="225.1" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-null">−0.005 ± 0.019</td>
+<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.005  (95% CI -0.042 to +0.032)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="186.6" y1="20.0" x2="249.9" y2="20.0" class="bar"/><circle cx="218.2" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.000  (95% CI -0.041 to +0.041)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="187.5" y1="20.0" x2="257.5" y2="20.0" class="bar"/><circle cx="222.5" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">+0.3 ± 2.2</td>
-<td class="num">−70</td>
+<td class="num">+0.0 ± 2.1</td>
+<td class="num">−53</td>
 <td class="c v-null">n.s.</td>
 <td class="go"><a href="#fullchunk" aria-label="details">›</a></td>
 </tr><tr class="first link" data-href="#speed"><td class="set">Playback speed-up</td>
 <td class="c chg">1.3×</td>
 <td class="c chg">1×</td>
-<td class="num q sig-hurt">−0.043 ± 0.019</td>
-<td class="plot"><svg class="ci m-q k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.043  (95% CI -0.081 to -0.005)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="153.7" y1="20.0" x2="218.2" y2="20.0" class="bar"/><circle cx="186.0" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.042  (95% CI -0.083 to -0.001)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="152.0" y1="20.0" x2="221.6" y2="20.0" class="bar"/><circle cx="186.8" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-hurt">−0.042 ± 0.019</td>
+<td class="plot"><svg class="ci m-q k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.042  (95% CI -0.079 to -0.005)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="155.1" y1="20.0" x2="218.5" y2="20.0" class="bar"/><circle cx="186.8" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.038  (95% CI -0.079 to +0.003)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="155.2" y1="20.0" x2="225.2" y2="20.0" class="bar"/><circle cx="190.2" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">−4.2 ± 2.1</td>
-<td class="num">+458</td>
+<td class="num">−3.8 ± 2.1</td>
+<td class="num">+433</td>
 <td class="c v-hurt">hurts</td>
 <td class="go"><a href="#speed" aria-label="details">›</a></td>
 </tr><tr class="link" data-href="#speed2"><td class="set"></td>
 <td class="c chg">1.3×</td>
 <td class="c chg">2×</td>
-<td class="num q sig-null">−0.034 ± 0.020</td>
-<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.034  (95% CI -0.073 to +0.004)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="160.6" y1="20.0" x2="226.0" y2="20.0" class="bar"/><circle cx="193.3" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.021  (95% CI -0.061 to +0.019)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="170.9" y1="20.0" x2="238.6" y2="20.0" class="bar"/><circle cx="204.7" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-null">−0.032 ± 0.019</td>
+<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.032  (95% CI -0.069 to +0.005)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="163.6" y1="20.0" x2="227.0" y2="20.0" class="bar"/><circle cx="195.3" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.019  (95% CI -0.058 to +0.020)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="173.0" y1="20.0" x2="239.7" y2="20.0" class="bar"/><circle cx="206.3" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">−2.1 ± 2.0</td>
-<td class="num">−118</td>
+<td class="num">−1.9 ± 2.0</td>
+<td class="num">−135</td>
 <td class="c v-null">n.s.</td>
 <td class="go"><a href="#speed2" aria-label="details">›</a></td>
 </tr><tr class="first link" data-href="#flow"><td class="set">Denoising steps</td>
 <td class="c chg">20</td>
 <td class="c chg">10</td>
 <td class="num q sig-null">−0.017 ± 0.018</td>
-<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.017  (95% CI -0.053 to +0.019)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="177.7" y1="20.0" x2="238.4" y2="20.0" class="bar"/><circle cx="208.1" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.008  (95% CI -0.050 to +0.034)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="180.2" y1="20.0" x2="251.4" y2="20.0" class="bar"/><circle cx="215.8" cy="20.0" r="5" class="pt"/></svg>
+<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.017  (95% CI -0.052 to +0.018)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="178.1" y1="20.0" x2="238.0" y2="20.0" class="bar"/><circle cx="208.1" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.009  (95% CI -0.050 to +0.032)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="179.9" y1="20.0" x2="249.8" y2="20.0" class="bar"/><circle cx="214.8" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">−0.8 ± 2.1</td>
-<td class="num">−16</td>
+<td class="num">−0.9 ± 2.1</td>
+<td class="num">+7</td>
 <td class="c v-null">n.s.</td>
 <td class="go"><a href="#flow" aria-label="details">›</a></td>
 </tr><tr class="link" data-href="#flow1"><td class="set"></td>
 <td class="c chg">20</td>
 <td class="c chg">1</td>
-<td class="num q sig-null">+0.005 ± 0.019</td>
-<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.005  (95% CI -0.032 to +0.042)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="194.9" y1="20.0" x2="258.5" y2="20.0" class="bar"/><circle cx="226.7" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.009  (95% CI -0.029 to +0.048)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="197.9" y1="20.0" x2="263.1" y2="20.0" class="bar"/><circle cx="230.5" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-null">+0.007 ± 0.018</td>
+<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.007  (95% CI -0.028 to +0.042)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="198.5" y1="20.0" x2="258.4" y2="20.0" class="bar"/><circle cx="228.4" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.013  (95% CI -0.024 to +0.050)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="201.9" y1="20.0" x2="265.2" y2="20.0" class="bar"/><circle cx="233.6" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">+0.9 ± 2.0</td>
-<td class="num">+11</td>
+<td class="num">+1.3 ± 1.9</td>
+<td class="num">−23</td>
 <td class="c v-null">n.s.</td>
 <td class="go"><a href="#flow1" aria-label="details">›</a></td>
 </tr><tr class="first link" data-href="#blend"><td class="set">Overlap inpainting</td>
 <td class="c chg">On</td>
 <td class="c chg">Off</td>
-<td class="num q sig-null">−0.016 ± 0.019</td>
-<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.016  (95% CI -0.054 to +0.021)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="176.7" y1="20.0" x2="240.6" y2="20.0" class="bar"/><circle cx="208.7" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.022  (95% CI -0.067 to +0.022)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="165.5" y1="20.0" x2="241.2" y2="20.0" class="bar"/><circle cx="203.4" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-null">−0.016 ± 0.018</td>
+<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.016  (95% CI -0.051 to +0.019)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="178.9" y1="20.0" x2="238.9" y2="20.0" class="bar"/><circle cx="208.9" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.018  (95% CI -0.061 to +0.025)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="170.5" y1="20.0" x2="243.9" y2="20.0" class="bar"/><circle cx="207.2" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">−2.2 ± 2.3</td>
-<td class="num">+44</td>
+<td class="num">−1.8 ± 2.2</td>
+<td class="num">−7</td>
 <td class="c v-null">n.s.</td>
 <td class="go"><a href="#blend" aria-label="details">›</a></td>
 </tr><tr class="first link" data-href="#cfg2"><td class="set">Advantage-guidance strength</td>
 <td class="c chg">1</td>
 <td class="c chg">2</td>
-<td class="num q sig-hurt">−0.035 ± 0.018</td>
-<td class="plot"><svg class="ci m-q k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.035  (95% CI -0.070 to -0.000)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="163.2" y1="20.0" x2="222.2" y2="20.0" class="bar"/><circle cx="192.7" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.038  (95% CI -0.073 to -0.003)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="160.2" y1="20.0" x2="219.9" y2="20.0" class="bar"/><circle cx="190.1" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-hurt">−0.035 ± 0.017</td>
+<td class="plot"><svg class="ci m-q k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.035  (95% CI -0.068 to -0.002)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="164.4" y1="20.0" x2="221.1" y2="20.0" class="bar"/><circle cx="192.8" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.040  (95% CI -0.073 to -0.007)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="160.2" y1="20.0" x2="216.8" y2="20.0" class="bar"/><circle cx="188.5" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">−3.8 ± 1.8</td>
-<td class="num">+321</td>
+<td class="num">−4.0 ± 1.7</td>
+<td class="num">+330</td>
 <td class="c v-hurt">hurts (borderline)</td>
 <td class="go"><a href="#cfg2" aria-label="details">›</a></td>
 </tr><tr class="link" data-href="#cfg4"><td class="set"></td>
 <td class="c chg">1</td>
 <td class="c chg">4</td>
-<td class="num q sig-null">+0.001 ± 0.017</td>
-<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.001  (95% CI -0.032 to +0.033)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="195.1" y1="20.0" x2="250.8" y2="20.0" class="bar"/><circle cx="223.0" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.003  (95% CI -0.032 to +0.037)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="195.1" y1="20.0" x2="254.3" y2="20.0" class="bar"/><circle cx="224.7" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-null">−0.004 ± 0.016</td>
+<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.004  (95% CI -0.035 to +0.027)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="192.4" y1="20.0" x2="245.8" y2="20.0" class="bar"/><circle cx="219.1" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.000  (95% CI -0.033 to +0.033)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="194.2" y1="20.0" x2="250.8" y2="20.0" class="bar"/><circle cx="222.5" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">+0.3 ± 1.8</td>
-<td class="num">+28</td>
+<td class="num">+0.0 ± 1.7</td>
+<td class="num">+42</td>
 <td class="c v-null">n.s.</td>
 <td class="go"><a href="#cfg4" aria-label="details">›</a></td>
 </tr><tr class="first link" data-href="#render"><td class="set">Render resolution</td>
 <td class="c chg">native, downsampled</td>
 <td class="c chg">224</td>
-<td class="num q sig-null">−0.032 ± 0.019</td>
-<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.032  (95% CI -0.069 to +0.005)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="163.7" y1="20.0" x2="227.0" y2="20.0" class="bar"/><circle cx="195.3" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.023  (95% CI -0.061 to +0.014)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="170.4" y1="20.0" x2="234.8" y2="20.0" class="bar"/><circle cx="202.6" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-null">−0.035 ± 0.019</td>
+<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.035  (95% CI -0.072 to +0.002)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="161.1" y1="20.0" x2="224.4" y2="20.0" class="bar"/><circle cx="192.8" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.025  (95% CI -0.062 to +0.012)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="169.6" y1="20.0" x2="232.9" y2="20.0" class="bar"/><circle cx="201.2" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">−2.3 ± 1.9</td>
-<td class="num">+114</td>
+<td class="num">−2.5 ± 1.9</td>
+<td class="num">+125</td>
 <td class="c v-null">n.s.</td>
 <td class="go"><a href="#render" aria-label="details">›</a></td>
 </tr><tr class="first link" data-href="#snap"><td class="set">Gripper snap</td>
 <td class="c chg">On</td>
 <td class="c chg">Off</td>
-<td class="num q sig-null">−0.030 ± 0.024</td>
-<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.030  (95% CI -0.076 to +0.017)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="157.7" y1="20.0" x2="236.6" y2="20.0" class="bar"/><circle cx="197.1" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.050  (95% CI -0.103 to +0.003)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="135.4" y1="20.0" x2="224.6" y2="20.0" class="bar"/><circle cx="180.0" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-hurt">−0.027 ± 0.023</td>
+<td class="plot"><svg class="ci m-q k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.027  (95% CI -0.072 to +0.018)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="161.2" y1="20.0" x2="237.9" y2="20.0" class="bar"/><circle cx="199.6" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.053  (95% CI -0.104 to -0.002)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="134.1" y1="20.0" x2="220.8" y2="20.0" class="bar"/><circle cx="177.4" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">−5.0 ± 2.7</td>
-<td class="num">+310</td>
-<td class="c v-null">n.s.</td>
+<td class="num">−5.3 ± 2.6</td>
+<td class="num">+326</td>
+<td class="c v-hurt">hurts (borderline)</td>
 <td class="go"><a href="#snap" aria-label="details">›</a></td>
 </tr><tr class="first link" data-href="#bestof"><td class="set">Best-of-N</td>
 <td class="c chg">1</td>
 <td class="c chg">4</td>
 <td class="num q sig-null">−0.008 ± 0.024</td>
-<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.008  (95% CI -0.055 to +0.040)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="175.8" y1="20.0" x2="256.5" y2="20.0" class="bar"/><circle cx="215.7" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.018  (95% CI -0.075 to +0.039)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="158.8" y1="20.0" x2="255.7" y2="20.0" class="bar"/><circle cx="207.2" cy="20.0" r="5" class="pt"/></svg>
+<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.008  (95% CI -0.055 to +0.039)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="175.7" y1="20.0" x2="255.7" y2="20.0" class="bar"/><circle cx="215.7" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.018  (95% CI -0.075 to +0.039)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="158.9" y1="20.0" x2="255.5" y2="20.0" class="bar"/><circle cx="207.2" cy="20.0" r="5" class="pt"/></svg>
 </td>
 <td class="num">−1.8 ± 2.9</td>
 <td class="num">−1</td>
@@ -848,12 +849,12 @@ Over all four instances these shifts largely cancel out, leaving a difference of
 <div class="ol">baseline</div>
 </div>
 <div class="t-opt k-hurt" id="replan"><div class="ov">13</div>
-<div class="ol">ΔQ −0.162 ± 0.033</div>
+<div class="ol">ΔQ −0.165 ± 0.032</div>
 <div class="ovd">hurts</div>
 <button type="button" class="t-watch" data-video="videos/tasks/01_action_chunk_execution_horizon_13_instead_of_26_actions.mp4" data-poster="videos/tasks/01_action_chunk_execution_horizon_13_instead_of_26_actions.jpg">&#9654; Watch video</button>
 </div>
 <div class="t-opt k-null" id="fullchunk"><div class="ov">30</div>
-<div class="ol">ΔQ −0.003 ± 0.019</div>
+<div class="ol">ΔQ −0.005 ± 0.019</div>
 <div class="ovd">no change detected</div>
 </div>
 </div>
@@ -884,9 +885,9 @@ On the single “turning on radio” task, Comet reports a non-monotonic relatio
 <line x1="474.0" x2="474.0" y1="8" y2="80.0" class="zero"/>
 <text x="405.4" y="116.0" class="axis" text-anchor="middle">ΔQ against the baseline (95% CI)</text>
 <text x="233.4" y="31.0" class="lab" text-anchor="end">13</text>
-<g class="pt k-hurt"><title>13: −0.162  (95% CI −0.226 to −0.097)</title><rect x="245.4" y="8.0" width="320" height="36" class="hit"/><line x1="267.3" x2="385.3" y1="26.0" y2="26.0" class="ci"/><circle cx="325.9" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-hurt"><title>13: −0.165  (95% CI −0.228 to −0.102)</title><rect x="245.4" y="8.0" width="320" height="36" class="hit"/><line x1="265.8" x2="380.4" y1="26.0" y2="26.0" class="ci"/><circle cx="323.1" cy="26.0" r="5" class="dot"/></g>
 <text x="233.4" y="67.0" class="lab" text-anchor="end">30 (all, no overlap)</text>
-<g class="pt k-null"><title>30 (all, no overlap): −0.003  (95% CI −0.040 to +0.035)</title><rect x="245.4" y="44.0" width="320" height="36" class="hit"/><line x1="437.4" x2="506.0" y1="62.0" y2="62.0" class="ci"/><circle cx="471.3" cy="62.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>30 (all, no overlap): −0.005  (95% CI −0.042 to +0.032)</title><rect x="245.4" y="44.0" width="320" height="36" class="hit"/><line x1="435.3" x2="503.4" y1="62.0" y2="62.0" class="ci"/><circle cx="469.4" cy="62.0" r="5" class="dot"/></g>
 </svg>
 
 <svg viewBox="0 0 680 124" class="forest m-sr" role="img" aria-label="Δ success rate against the baseline (95% CI)">
@@ -901,9 +902,9 @@ On the single “turning on radio” task, Comet reports a non-monotonic relatio
 <line x1="474.0" x2="474.0" y1="8" y2="80.0" class="zero"/>
 <text x="405.4" y="116.0" class="axis" text-anchor="middle">Δ success rate against the baseline (95% CI)</text>
 <text x="233.4" y="31.0" class="lab" text-anchor="end">13</text>
-<g class="pt k-hurt"><title>13: −0.110  (95% CI −0.171 to −0.049)</title><rect x="245.4" y="8.0" width="320" height="36" class="hit"/><line x1="317.6" x2="429.2" y1="26.0" y2="26.0" class="ci"/><circle cx="373.4" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-hurt"><title>13: −0.110  (95% CI −0.171 to −0.049)</title><rect x="245.4" y="8.0" width="320" height="36" class="hit"/><line x1="317.8" x2="428.9" y1="26.0" y2="26.0" class="ci"/><circle cx="373.4" cy="26.0" r="5" class="dot"/></g>
 <text x="233.4" y="67.0" class="lab" text-anchor="end">30 (all, no overlap)</text>
-<g class="pt k-null"><title>30 (all, no overlap): +0.003  (95% CI −0.040 to +0.046)</title><rect x="245.4" y="44.0" width="320" height="36" class="hit"/><line x1="437.4" x2="516.1" y1="62.0" y2="62.0" class="ci"/><circle cx="476.7" cy="62.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>30 (all, no overlap): +0.000  (95% CI −0.041 to +0.041)</title><rect x="245.4" y="44.0" width="320" height="36" class="hit"/><line x1="436.3" x2="511.6" y1="62.0" y2="62.0" class="ci"/><circle cx="474.0" cy="62.0" r="5" class="dot"/></g>
 </svg>
 </div>
 </div>
@@ -922,16 +923,16 @@ On the single “turning on radio” task, Comet reports a non-monotonic relatio
 
 </tr></thead><tbody>
 <tr class="grp-first sig-hurt"><td class="set-cell">13</td>
-<td class="num sig-hurt">−0.162 ± 0.033</td>
-<td class="num">[−0.226, −0.097]</td>
+<td class="num sig-hurt">−0.165 ± 0.032</td>
+<td class="num">[−0.228, −0.102]</td>
 <td class="num">−0.110 ± 0.031</td>
-<td class="num">+753 ± 199</td>
+<td class="num">+752 ± 189</td>
 </tr>
 <tr class="grp-first sig-null"><td class="set-cell">30 (all, no overlap)</td>
-<td class="num sig-null">−0.003 ± 0.019</td>
-<td class="num">[−0.040, +0.035]</td>
-<td class="num">+0.003 ± 0.022</td>
-<td class="num">−70</td>
+<td class="num sig-null">−0.005 ± 0.019</td>
+<td class="num">[−0.042, +0.032]</td>
+<td class="num">+0.000 ± 0.021</td>
+<td class="num">−53 ± 146</td>
 </tr>
 </tbody></table></div>
 
@@ -952,12 +953,12 @@ Moreover, the policy was fine-tuned on its own rollouts, all collected with a 26
 <div class="ol">baseline</div>
 </div>
 <div class="t-opt k-hurt" id="speed"><div class="ov">1×</div>
-<div class="ol">ΔQ −0.043 ± 0.019</div>
+<div class="ol">ΔQ −0.042 ± 0.019</div>
 <div class="ovd">hurts</div>
 <button type="button" class="t-watch" data-video="videos/tasks/02_playback_speed_up_1_instead_of_1_3.mp4" data-poster="videos/tasks/02_playback_speed_up_1_instead_of_1_3.jpg">&#9654; Watch video</button>
 </div>
 <div class="t-opt k-null" id="speed2"><div class="ov">2×</div>
-<div class="ol">ΔQ −0.034 ± 0.020</div>
+<div class="ol">ΔQ −0.032 ± 0.019</div>
 <div class="ovd">no change detected</div>
 <button type="button" class="t-watch" data-video="videos/tasks/03_playback_speed_up_2_instead_of_1_3.mp4" data-poster="videos/tasks/03_playback_speed_up_2_instead_of_1_3.jpg">&#9654; Watch video</button>
 </div>
@@ -984,9 +985,9 @@ It also reports that doubling the speed degraded its score.
 <line x1="433.8" x2="433.8" y1="8" y2="80.0" class="zero"/>
 <text x="353.8" y="116.0" class="axis" text-anchor="middle">ΔQ against the baseline (95% CI)</text>
 <text x="181.8" y="31.0" class="lab" text-anchor="end">1×</text>
-<g class="pt k-hurt"><title>1×: −0.043  (95% CI −0.081 to −0.005)</title><rect x="193.8" y="8.0" width="320" height="36" class="hit"/><line x1="304.2" x2="425.8" y1="26.0" y2="26.0" class="ci"/><circle cx="365.0" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-hurt"><title>1×: −0.042  (95% CI −0.079 to −0.005)</title><rect x="193.8" y="8.0" width="320" height="36" class="hit"/><line x1="307.0" x2="426.2" y1="26.0" y2="26.0" class="ci"/><circle cx="366.6" cy="26.0" r="5" class="dot"/></g>
 <text x="181.8" y="67.0" class="lab" text-anchor="end">2×</text>
-<g class="pt k-null"><title>2×: −0.034  (95% CI −0.073 to +0.004)</title><rect x="193.8" y="44.0" width="320" height="36" class="hit"/><line x1="317.0" x2="440.2" y1="62.0" y2="62.0" class="ci"/><circle cx="379.4" cy="62.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>2×: −0.032  (95% CI −0.069 to +0.005)</title><rect x="193.8" y="44.0" width="320" height="36" class="hit"/><line x1="323.0" x2="442.2" y1="62.0" y2="62.0" class="ci"/><circle cx="382.6" cy="62.0" r="5" class="dot"/></g>
 </svg>
 
 <svg viewBox="0 0 680 124" class="forest m-sr" role="img" aria-label="Δ success rate against the baseline (95% CI)">
@@ -1003,9 +1004,9 @@ It also reports that doubling the speed degraded its score.
 <line x1="433.8" x2="433.8" y1="8" y2="80.0" class="zero"/>
 <text x="353.8" y="116.0" class="axis" text-anchor="middle">Δ success rate against the baseline (95% CI)</text>
 <text x="181.8" y="31.0" class="lab" text-anchor="end">1×</text>
-<g class="pt k-hurt"><title>1×: −0.042  (95% CI −0.083 to −0.001)</title><rect x="193.8" y="8.0" width="320" height="36" class="hit"/><line x1="301.0" x2="432.2" y1="26.0" y2="26.0" class="ci"/><circle cx="366.6" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-hurt"><title>1×: −0.038  (95% CI −0.079 to +0.003)</title><rect x="193.8" y="8.0" width="320" height="36" class="hit"/><line x1="307.1" x2="438.9" y1="26.0" y2="26.0" class="ci"/><circle cx="373.0" cy="26.0" r="5" class="dot"/></g>
 <text x="181.8" y="67.0" class="lab" text-anchor="end">2×</text>
-<g class="pt k-null"><title>2×: −0.021  (95% CI −0.060 to +0.018)</title><rect x="193.8" y="44.0" width="320" height="36" class="hit"/><line x1="337.8" x2="462.6" y1="62.0" y2="62.0" class="ci"/><circle cx="400.2" cy="62.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>2×: −0.019  (95% CI −0.058 to +0.020)</title><rect x="193.8" y="44.0" width="320" height="36" class="hit"/><line x1="340.7" x2="466.1" y1="62.0" y2="62.0" class="ci"/><circle cx="403.4" cy="62.0" r="5" class="dot"/></g>
 </svg>
 </div>
 </div>
@@ -1018,16 +1019,16 @@ It also reports that doubling the speed degraded its score.
 <th class="num">Δ steps per episode</th>
 </tr></thead><tbody>
 <tr class="grp-first sig-hurt"><td class="set-cell">1×</td>
-<td class="num sig-hurt">−0.043 ± 0.019</td>
-<td class="num">[−0.081, −0.005]</td>
-<td class="num">−0.042 ± 0.021</td>
-<td class="num">+458</td>
+<td class="num sig-hurt">−0.042 ± 0.019</td>
+<td class="num">[−0.079, −0.005]</td>
+<td class="num">−0.038 ± 0.021</td>
+<td class="num">+433 ± 124</td>
 </tr>
 <tr class="grp-first sig-null"><td class="set-cell">2×</td>
-<td class="num sig-null">−0.034 ± 0.020</td>
-<td class="num">[−0.073, +0.004]</td>
-<td class="num">−0.021 ± 0.020</td>
-<td class="num">−118 ± 150</td>
+<td class="num sig-null">−0.032 ± 0.019</td>
+<td class="num">[−0.069, +0.005]</td>
+<td class="num">−0.019 ± 0.020</td>
+<td class="num">−135 ± 144</td>
 </tr>
 </tbody></table></div>
 
@@ -1044,7 +1045,7 @@ It also reports that doubling the speed degraded its score.
 <div class="ol">baseline</div>
 </div>
 <div class="t-opt k-null" id="flow1"><div class="ov">1</div>
-<div class="ol">ΔQ +0.005 ± 0.019</div>
+<div class="ol">ΔQ +0.007 ± 0.018</div>
 <div class="ovd">no change detected</div>
 <button type="button" class="t-watch" data-video="videos/tasks/06_denoising_steps_1_instead_of_20.mp4" data-poster="videos/tasks/06_denoising_steps_1_instead_of_20.jpg">&#9654; Watch video</button>
 </div>
@@ -1076,9 +1077,9 @@ Because the simulator waits for the policy, denoising steps cost compute but no 
 <line x1="354.0" x2="354.0" y1="8" y2="80.0" class="zero"/>
 <text x="354.0" y="116.0" class="axis" text-anchor="middle">ΔQ against the baseline (95% CI)</text>
 <text x="182.0" y="31.0" class="lab" text-anchor="end">1</text>
-<g class="pt k-null"><title>1: +0.005  (95% CI −0.032 to +0.042)</title><rect x="194.0" y="8.0" width="320" height="36" class="hit"/><line x1="302.0" x2="421.8" y1="26.0" y2="26.0" class="ci"/><circle cx="361.9" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>1: +0.007  (95% CI −0.028 to +0.042)</title><rect x="194.0" y="8.0" width="320" height="36" class="hit"/><line x1="308.8" x2="421.6" y1="26.0" y2="26.0" class="ci"/><circle cx="365.2" cy="26.0" r="5" class="dot"/></g>
 <text x="182.0" y="67.0" class="lab" text-anchor="end">10</text>
-<g class="pt k-null"><title>10: −0.017  (95% CI −0.053 to +0.019)</title><rect x="194.0" y="44.0" width="320" height="36" class="hit"/><line x1="269.2" x2="384.4" y1="62.0" y2="62.0" class="ci"/><circle cx="326.8" cy="62.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>10: −0.017  (95% CI −0.052 to +0.018)</title><rect x="194.0" y="44.0" width="320" height="36" class="hit"/><line x1="270.4" x2="383.2" y1="62.0" y2="62.0" class="ci"/><circle cx="326.8" cy="62.0" r="5" class="dot"/></g>
 </svg>
 
 <svg viewBox="0 0 680 124" class="forest m-sr" role="img" aria-label="Δ success rate against the baseline (95% CI)">
@@ -1095,9 +1096,9 @@ Because the simulator waits for the policy, denoising steps cost compute but no 
 <line x1="354.0" x2="354.0" y1="8" y2="80.0" class="zero"/>
 <text x="354.0" y="116.0" class="axis" text-anchor="middle">Δ success rate against the baseline (95% CI)</text>
 <text x="182.0" y="31.0" class="lab" text-anchor="end">1</text>
-<g class="pt k-null"><title>1: −0.003  (95% CI −0.062 to +0.056)</title><rect x="194.0" y="8.0" width="320" height="36" class="hit"/><line x1="254.8" x2="443.6" y1="26.0" y2="26.0" class="ci"/><circle cx="349.2" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>1: +0.013  (95% CI −0.024 to +0.050)</title><rect x="194.0" y="8.0" width="320" height="36" class="hit"/><line x1="315.2" x2="434.4" y1="26.0" y2="26.0" class="ci"/><circle cx="374.8" cy="26.0" r="5" class="dot"/></g>
 <text x="182.0" y="67.0" class="lab" text-anchor="end">10</text>
-<g class="pt k-null"><title>10: −0.008  (95% CI −0.049 to +0.033)</title><rect x="194.0" y="44.0" width="320" height="36" class="hit"/><line x1="275.6" x2="406.8" y1="62.0" y2="62.0" class="ci"/><circle cx="341.2" cy="62.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>10: −0.009  (95% CI −0.050 to +0.032)</title><rect x="194.0" y="44.0" width="320" height="36" class="hit"/><line x1="273.7" x2="405.5" y1="62.0" y2="62.0" class="ci"/><circle cx="339.6" cy="62.0" r="5" class="dot"/></g>
 </svg>
 </div>
 </div>
@@ -1110,16 +1111,16 @@ Because the simulator waits for the policy, denoising steps cost compute but no 
 <th class="num">Δ steps per episode</th>
 </tr></thead><tbody>
 <tr class="grp-first sig-null"><td class="set-cell">1</td>
-<td class="num sig-null">+0.005 ± 0.019</td>
-<td class="num">[−0.032, +0.042]</td>
-<td class="num">+0.009 ± 0.020</td>
-<td class="num">+11 ± 110</td>
+<td class="num sig-null">+0.007 ± 0.018</td>
+<td class="num">[−0.028, +0.042]</td>
+<td class="num">+0.013 ± 0.019</td>
+<td class="num">−23 ± 110</td>
 </tr>
 <tr class="grp-first sig-null"><td class="set-cell">10</td>
 <td class="num sig-null">−0.017 ± 0.018</td>
-<td class="num">[−0.053, +0.019]</td>
-<td class="num">−0.008 ± 0.021</td>
-<td class="num">−16 ± 136</td>
+<td class="num">[−0.052, +0.018]</td>
+<td class="num">−0.009 ± 0.021</td>
+<td class="num">+7 ± 130</td>
 </tr>
 </tbody></table></div>
 
@@ -1136,7 +1137,7 @@ Because the simulator waits for the policy, denoising steps cost compute but no 
 <div class="ol">baseline</div>
 </div>
 <div class="t-opt k-null"><div class="ov">Off</div>
-<div class="ol">ΔQ −0.016 ± 0.019</div>
+<div class="ol">ΔQ −0.016 ± 0.018</div>
 <div class="ovd">no change detected</div>
 <button type="button" class="t-watch" data-video="videos/tasks/04_overlap_inpainting_off.mp4" data-poster="videos/tasks/04_overlap_inpainting_off.jpg">&#9654; Watch video</button>
 </div>
@@ -1166,7 +1167,7 @@ Because our simulator waits for the policy, our experiment isolates chunk joinin
 <line x1="387.0" x2="387.0" y1="8" y2="44.0" class="zero"/>
 <text x="355.0" y="80.0" class="axis" text-anchor="middle">ΔQ against the baseline (95% CI)</text>
 <text x="183.0" y="31.0" class="lab" text-anchor="end">Off</text>
-<g class="pt k-null"><title>Off: −0.016  (95% CI −0.054 to +0.021)</title><rect x="195.0" y="8.0" width="320" height="36" class="hit"/><line x1="318.1" x2="414.3" y1="26.0" y2="26.0" class="ci"/><circle cx="366.2" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>Off: −0.016  (95% CI −0.051 to +0.019)</title><rect x="195.0" y="8.0" width="320" height="36" class="hit"/><line x1="321.4" x2="411.7" y1="26.0" y2="26.0" class="ci"/><circle cx="366.5" cy="26.0" r="5" class="dot"/></g>
 </svg>
 
 <svg viewBox="0 0 680 88" class="forest m-sr" role="img" aria-label="Δ success rate against the baseline (95% CI)">
@@ -1185,7 +1186,7 @@ Because our simulator waits for the policy, our experiment isolates chunk joinin
 <line x1="387.0" x2="387.0" y1="8" y2="44.0" class="zero"/>
 <text x="355.0" y="80.0" class="axis" text-anchor="middle">Δ success rate against the baseline (95% CI)</text>
 <text x="183.0" y="31.0" class="lab" text-anchor="end">Off</text>
-<g class="pt k-null"><title>Off: −0.022  (95% CI −0.067 to +0.022)</title><rect x="195.0" y="8.0" width="320" height="36" class="hit"/><line x1="301.2" x2="415.2" y1="26.0" y2="26.0" class="ci"/><circle cx="358.2" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>Off: −0.018  (95% CI −0.061 to +0.025)</title><rect x="195.0" y="8.0" width="320" height="36" class="hit"/><line x1="308.8" x2="419.2" y1="26.0" y2="26.0" class="ci"/><circle cx="364.0" cy="26.0" r="5" class="dot"/></g>
 </svg>
 </div>
 </div>
@@ -1198,10 +1199,10 @@ Because our simulator waits for the policy, our experiment isolates chunk joinin
 <th class="num">Δ steps per episode</th>
 </tr></thead><tbody>
 <tr class="sig-null"><td class="">Off</td>
-<td class="num sig-null">−0.016 ± 0.019</td>
-<td class="num">[−0.054, +0.021]</td>
-<td class="num">−0.022 ± 0.023</td>
-<td class="num">+44 ± 171</td>
+<td class="num sig-null">−0.016 ± 0.018</td>
+<td class="num">[−0.051, +0.019]</td>
+<td class="num">−0.018 ± 0.022</td>
+<td class="num">−7 ± 164</td>
 </tr>
 </tbody></table></div>
 
@@ -1217,12 +1218,12 @@ The latency compensation <a href="https://arxiv.org/abs/2506.07339" target="_bla
 <div class="ol">baseline</div>
 </div>
 <div class="t-opt k-hurt" id="cfg2"><div class="ov">β = 2</div>
-<div class="ol">ΔQ −0.035 ± 0.018</div>
+<div class="ol">ΔQ −0.035 ± 0.017</div>
 <div class="ovd">hurts</div>
 <button type="button" class="t-watch" data-video="videos/tasks/07_advantage_guidance_strength_beta_2_instead_of_1.mp4" data-poster="videos/tasks/07_advantage_guidance_strength_beta_2_instead_of_1.jpg">&#9654; Watch video</button>
 </div>
 <div class="t-opt k-null" id="cfg4"><div class="ov">β = 4</div>
-<div class="ol">ΔQ +0.001 ± 0.017</div>
+<div class="ol">ΔQ −0.004 ± 0.016</div>
 <div class="ovd">no change detected</div>
 <button type="button" class="t-watch" data-video="videos/tasks/08_advantage_guidance_strength_beta_4_instead_of_1.mp4" data-poster="videos/tasks/08_advantage_guidance_strength_beta_4_instead_of_1.jpg">&#9654; Watch video</button>
 </div>
@@ -1248,9 +1249,9 @@ The latency compensation <a href="https://arxiv.org/abs/2506.07339" target="_bla
 <line x1="361.8" x2="361.8" y1="8" y2="80.0" class="zero"/>
 <text x="361.8" y="116.0" class="axis" text-anchor="middle">ΔQ against the baseline (95% CI)</text>
 <text x="189.8" y="31.0" class="lab" text-anchor="end">β = 2</text>
-<g class="pt k-null"><title>β = 2: −0.035  (95% CI −0.070 to +0.000)</title><rect x="201.8" y="8.0" width="320" height="36" class="hit"/><line x1="249.8" x2="361.8" y1="26.0" y2="26.0" class="ci"/><circle cx="305.8" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-hurt"><title>β = 2: −0.035  (95% CI −0.068 to −0.002)</title><rect x="201.8" y="8.0" width="320" height="36" class="hit"/><line x1="252.5" x2="359.1" y1="26.0" y2="26.0" class="ci"/><circle cx="305.8" cy="26.0" r="5" class="dot"/></g>
 <text x="189.8" y="67.0" class="lab" text-anchor="end">β = 4</text>
-<g class="pt k-null"><title>β = 4: +0.001  (95% CI −0.032 to +0.033)</title><rect x="201.8" y="44.0" width="320" height="36" class="hit"/><line x1="310.3" x2="415.0" y1="62.0" y2="62.0" class="ci"/><circle cx="362.7" cy="62.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>β = 4: −0.004  (95% CI −0.035 to +0.027)</title><rect x="201.8" y="44.0" width="320" height="36" class="hit"/><line x1="305.2" x2="405.6" y1="62.0" y2="62.0" class="ci"/><circle cx="355.4" cy="62.0" r="5" class="dot"/></g>
 </svg>
 
 <svg viewBox="0 0 680 124" class="forest m-sr" role="img" aria-label="Δ success rate against the baseline (95% CI)">
@@ -1267,9 +1268,9 @@ The latency compensation <a href="https://arxiv.org/abs/2506.07339" target="_bla
 <line x1="361.8" x2="361.8" y1="8" y2="80.0" class="zero"/>
 <text x="361.8" y="116.0" class="axis" text-anchor="middle">Δ success rate against the baseline (95% CI)</text>
 <text x="189.8" y="31.0" class="lab" text-anchor="end">β = 2</text>
-<g class="pt k-hurt"><title>β = 2: −0.038  (95% CI −0.073 to −0.003)</title><rect x="201.8" y="8.0" width="320" height="36" class="hit"/><line x1="245.0" x2="357.0" y1="26.0" y2="26.0" class="ci"/><circle cx="301.0" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-hurt"><title>β = 2: −0.040  (95% CI −0.073 to −0.007)</title><rect x="201.8" y="8.0" width="320" height="36" class="hit"/><line x1="244.5" x2="351.1" y1="26.0" y2="26.0" class="ci"/><circle cx="297.8" cy="26.0" r="5" class="dot"/></g>
 <text x="189.8" y="67.0" class="lab" text-anchor="end">β = 4</text>
-<g class="pt k-null"><title>β = 4: +0.003  (95% CI −0.032 to +0.037)</title><rect x="201.8" y="44.0" width="320" height="36" class="hit"/><line x1="310.3" x2="421.7" y1="62.0" y2="62.0" class="ci"/><circle cx="366.0" cy="62.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>β = 4: +0.000  (95% CI −0.033 to +0.033)</title><rect x="201.8" y="44.0" width="320" height="36" class="hit"/><line x1="308.5" x2="415.1" y1="62.0" y2="62.0" class="ci"/><circle cx="361.8" cy="62.0" r="5" class="dot"/></g>
 </svg>
 </div>
 </div>
@@ -1281,17 +1282,17 @@ The latency compensation <a href="https://arxiv.org/abs/2506.07339" target="_bla
 <th class="num">Δ success rate</th>
 <th class="num">Δ steps per episode</th>
 </tr></thead><tbody>
-<tr class="grp-first sig-null"><td class="set-cell">β = 2</td>
-<td class="num sig-null">−0.035 ± 0.018</td>
-<td class="num">[−0.070, −0.000]</td>
-<td class="num">−0.038 ± 0.018</td>
-<td class="num">+321 ± 127</td>
+<tr class="grp-first sig-hurt"><td class="set-cell">β = 2</td>
+<td class="num sig-hurt">−0.035 ± 0.017</td>
+<td class="num">[−0.068, −0.002]</td>
+<td class="num">−0.040 ± 0.017</td>
+<td class="num">+330 ± 123</td>
 </tr>
 <tr class="grp-first sig-null"><td class="set-cell">β = 4</td>
-<td class="num sig-null">+0.001 ± 0.017</td>
-<td class="num">[−0.032, +0.033]</td>
-<td class="num">+0.003 ± 0.018</td>
-<td class="num">+28 ± 130</td>
+<td class="num sig-null">−0.004 ± 0.016</td>
+<td class="num">[−0.035, +0.027]</td>
+<td class="num">+0.000 ± 0.017</td>
+<td class="num">+42 ± 126</td>
 </tr>
 </tbody></table></div>
 
@@ -1306,7 +1307,7 @@ Thus, stronger guidance provides no observable benefit in our experiments. We hy
 <div class="ol">baseline</div>
 </div>
 <div class="t-opt k-null"><div class="ov">Direct 224 render</div>
-<div class="ol">ΔQ −0.032 ± 0.019</div>
+<div class="ol">ΔQ −0.035 ± 0.019</div>
 <div class="ovd">no change detected</div>
 </div>
 </div>
@@ -1332,7 +1333,7 @@ reports improved performance when rendering observations at the cameras’ origi
 <line x1="496.2" x2="496.2" y1="8" y2="44.0" class="zero"/>
 <text x="400.2" y="80.0" class="axis" text-anchor="middle">ΔQ against the baseline (95% CI)</text>
 <text x="228.2" y="31.0" class="lab" text-anchor="end">Direct 224 render</text>
-<g class="pt k-null"><title>Direct 224 render: −0.032  (95% CI −0.069 to +0.005)</title><rect x="240.2" y="8.0" width="320" height="36" class="hit"/><line x1="407.6" x2="503.0" y1="26.0" y2="26.0" class="ci"/><circle cx="455.3" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>Direct 224 render: −0.035  (95% CI −0.072 to +0.002)</title><rect x="240.2" y="8.0" width="320" height="36" class="hit"/><line x1="403.7" x2="499.1" y1="26.0" y2="26.0" class="ci"/><circle cx="451.4" cy="26.0" r="5" class="dot"/></g>
 </svg>
 
 <svg viewBox="0 0 680 88" class="forest m-sr" role="img" aria-label="Δ success rate against the baseline (95% CI)">
@@ -1351,7 +1352,7 @@ reports improved performance when rendering observations at the cameras’ origi
 <line x1="496.2" x2="496.2" y1="8" y2="44.0" class="zero"/>
 <text x="400.2" y="80.0" class="axis" text-anchor="middle">Δ success rate against the baseline (95% CI)</text>
 <text x="228.2" y="31.0" class="lab" text-anchor="end">Direct 224 render</text>
-<g class="pt k-null"><title>Direct 224 render: −0.023  (95% CI −0.061 to +0.014)</title><rect x="240.2" y="8.0" width="320" height="36" class="hit"/><line x1="417.8" x2="514.6" y1="26.0" y2="26.0" class="ci"/><circle cx="466.2" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>Direct 224 render: −0.025  (95% CI −0.062 to +0.012)</title><rect x="240.2" y="8.0" width="320" height="36" class="hit"/><line x1="416.5" x2="511.9" y1="26.0" y2="26.0" class="ci"/><circle cx="464.2" cy="26.0" r="5" class="dot"/></g>
 </svg>
 </div>
 </div>
@@ -1364,10 +1365,10 @@ reports improved performance when rendering observations at the cameras’ origi
 <th class="num">Δ steps per episode</th>
 </tr></thead><tbody>
 <tr class="sig-null"><td class="">Direct 224 render</td>
-<td class="num sig-null">−0.032 ± 0.019</td>
-<td class="num">[−0.069, +0.005]</td>
-<td class="num">−0.023 ± 0.019</td>
-<td class="num">+114 ± 129</td>
+<td class="num sig-null">−0.035 ± 0.019</td>
+<td class="num">[−0.072, +0.002]</td>
+<td class="num">−0.025 ± 0.019</td>
+<td class="num">+125 ± 125</td>
 </tr>
 </tbody></table></div>
 
@@ -1383,9 +1384,9 @@ Direct low-resolution rendering would then introduce a small visual distribution
 <div class="t-opts"><div class="t-opt base"><div class="ov">On</div>
 <div class="ol">baseline</div>
 </div>
-<div class="t-opt k-null"><div class="ov">Off</div>
-<div class="ol">ΔQ −0.030 ± 0.024</div>
-<div class="ovd">no change detected</div>
+<div class="t-opt k-hurt"><div class="ov">Off</div>
+<div class="ol">ΔQ −0.027 ± 0.023</div>
+<div class="ovd">hurts success rate</div>
 </div>
 </div>
 
@@ -1409,7 +1410,7 @@ It is on in the baseline and known to help, so turning it off is a positive cont
 <line x1="462.7" x2="462.7" y1="8" y2="44.0" class="zero"/>
 <text x="382.7" y="80.0" class="axis" text-anchor="middle">ΔQ against the baseline (95% CI)</text>
 <text x="210.7" y="31.0" class="lab" text-anchor="end">vs baseline</text>
-<g class="pt k-null"><title>vs baseline: −0.030  (95% CI −0.076 to +0.017)</title><rect x="222.7" y="8.0" width="320" height="36" class="hit"/><line x1="341.1" x2="489.9" y1="26.0" y2="26.0" class="ci"/><circle cx="414.7" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-hurt"><title>vs baseline: −0.027  (95% CI −0.072 to +0.018)</title><rect x="222.7" y="8.0" width="320" height="36" class="hit"/><line x1="347.4" x2="491.6" y1="26.0" y2="26.0" class="ci"/><circle cx="419.5" cy="26.0" r="5" class="dot"/></g>
 </svg>
 
 <svg viewBox="0 0 680 88" class="forest m-sr" role="img" aria-label="Δ success rate against the baseline (95% CI)">
@@ -1426,7 +1427,7 @@ It is on in the baseline and known to help, so turning it off is a positive cont
 <line x1="462.7" x2="462.7" y1="8" y2="44.0" class="zero"/>
 <text x="382.7" y="80.0" class="axis" text-anchor="middle">Δ success rate against the baseline (95% CI)</text>
 <text x="210.7" y="31.0" class="lab" text-anchor="end">vs baseline</text>
-<g class="pt k-null"><title>vs baseline: −0.050  (95% CI −0.103 to +0.003)</title><rect x="222.7" y="8.0" width="320" height="36" class="hit"/><line x1="297.9" x2="467.5" y1="26.0" y2="26.0" class="ci"/><circle cx="382.7" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-hurt"><title>vs baseline: −0.053  (95% CI −0.104 to −0.002)</title><rect x="222.7" y="8.0" width="320" height="36" class="hit"/><line x1="296.4" x2="459.4" y1="26.0" y2="26.0" class="ci"/><circle cx="377.9" cy="26.0" r="5" class="dot"/></g>
 </svg>
 </div>
 </div>
@@ -1438,16 +1439,17 @@ It is on in the baseline and known to help, so turning it off is a positive cont
 <th class="num">Δ success rate</th>
 <th class="num">Δ steps per episode</th>
 </tr></thead><tbody>
-<tr class="sig-null"><td class="">mean of both baseline runs</td>
-<td class="num sig-null">−0.030 ± 0.024</td>
-<td class="num">[−0.076, +0.017]</td>
-<td class="num">−0.050 ± 0.027</td>
-<td class="num">+310 ± 181</td>
+<tr class="sig-hurt"><td class="">mean of both baseline runs</td>
+<td class="num sig-hurt">−0.027 ± 0.023</td>
+<td class="num">[−0.072, +0.018]</td>
+<td class="num">−0.053 ± 0.026</td>
+<td class="num">+326 ± 178</td>
 </tr>
 </tbody></table></div>
 
-<p class="t-concl"><strong>Conclusion.</strong> Turning the snap off moved Q and success rate in the expected direction, but the panel did not resolve the known effect.
-We hypothesise that the snap matters most on tasks with repeated grasp-and-release, which are a minority of the test panel, while during collection its effect was measured on train instances with many attempts on those tasks.</p>
+<p class="t-concl"><strong>Conclusion.</strong> Turning the snap off lowered success rate, in line with its known effect, while the drop in Q was not significant.
+The snap helps on specific tasks, mainly those that need repeated grasp-and-release, such as putting objects into a bin or sink. On the other tasks it makes little difference.
+Because those grasp-and-release tasks are a minority of the test panel, the overall effect is small, whereas during collection it was measured on train instances with many attempts on exactly those tasks.</p>
 </div>
 </details>
 <details class="test" id="bestof">
@@ -1484,7 +1486,7 @@ Motivated by these results, we test whether a similar benefit can be obtained fo
 <line x1="382.7" x2="382.7" y1="8" y2="44.0" class="zero"/>
 <text x="382.7" y="80.0" class="axis" text-anchor="middle">ΔQ against the baseline (95% CI)</text>
 <text x="210.7" y="31.0" class="lab" text-anchor="end">vs baseline</text>
-<g class="pt k-null"><title>vs baseline: −0.008  (95% CI −0.055 to +0.040)</title><rect x="222.7" y="8.0" width="320" height="36" class="hit"/><line x1="294.7" x2="446.7" y1="26.0" y2="26.0" class="ci"/><circle cx="369.9" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>vs baseline: −0.008  (95% CI −0.055 to +0.039)</title><rect x="222.7" y="8.0" width="320" height="36" class="hit"/><line x1="294.6" x2="445.2" y1="26.0" y2="26.0" class="ci"/><circle cx="369.9" cy="26.0" r="5" class="dot"/></g>
 </svg>
 
 <svg viewBox="0 0 680 88" class="forest m-sr" role="img" aria-label="Δ success rate against the baseline (95% CI)">
@@ -1501,7 +1503,7 @@ Motivated by these results, we test whether a similar benefit can be obtained fo
 <line x1="382.7" x2="382.7" y1="8" y2="44.0" class="zero"/>
 <text x="382.7" y="80.0" class="axis" text-anchor="middle">Δ success rate against the baseline (95% CI)</text>
 <text x="210.7" y="31.0" class="lab" text-anchor="end">vs baseline</text>
-<g class="pt k-null"><title>vs baseline: −0.018  (95% CI −0.075 to +0.039)</title><rect x="222.7" y="8.0" width="320" height="36" class="hit"/><line x1="262.7" x2="445.1" y1="26.0" y2="26.0" class="ci"/><circle cx="353.9" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>vs baseline: −0.018  (95% CI −0.075 to +0.039)</title><rect x="222.7" y="8.0" width="320" height="36" class="hit"/><line x1="263.0" x2="444.8" y1="26.0" y2="26.0" class="ci"/><circle cx="353.9" cy="26.0" r="5" class="dot"/></g>
 </svg>
 </div>
 </div>
@@ -1515,9 +1517,9 @@ Motivated by these results, we test whether a similar benefit can be obtained fo
 </tr></thead><tbody>
 <tr class="sig-null"><td class="">mean of both baseline runs</td>
 <td class="num sig-null">−0.008 ± 0.024</td>
-<td class="num">[−0.055, +0.040]</td>
+<td class="num">[−0.055, +0.039]</td>
 <td class="num">−0.018 ± 0.029</td>
-<td class="num">−1</td>
+<td class="num">−1 ± 212</td>
 </tr>
 </tbody></table></div>
 
