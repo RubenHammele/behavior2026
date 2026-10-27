@@ -76,6 +76,13 @@
     .rc-s, .rc-s-k { fill: #277f47; background: #277f47; } .rc-g, .rc-g-k { fill: #3b82e0; background: #3b82e0; }
     .rc-val { fill: #4a4a4a; font-size: 11px; font-variant-numeric: tabular-nums; } .rc-cat { fill: #363636; font-size: 13px; font-weight: 600; }
     .rc-base { stroke: #bdbdbd; stroke-width: 1; }
+    .inst-chart { display: block; width: 100%; max-width: 680px; min-width: 480px; margin: 0 auto; font-family: inherit; }
+    .ic-tick { fill: #555; font-size: 13px; } .ic-axis { fill: #444; font-size: 13px; } .ic-head-r { fill: #555; font-size: 12px; }
+    .ic-name, .ic-d { fill: #333; font-size: 14px; } .ic-tot { font-weight: 700; fill: #111; } .ic-sep { stroke: #ccc; stroke-width: 1; }
+    .ic-link { stroke: #b9c7d6; stroke-width: 3; } .ic-r1 { fill: #fff; stroke: #1f63a8; stroke-width: 2.5; } .ic-r2 { fill: #1f63a8; stroke: #fff; stroke-width: 2; }
+    .ic-pt { outline: none; } .ic-pt:hover .pc-hit, .ic-pt:focus .pc-hit { fill: rgba(0,0,0,.04); }
+    .ic-legend { display: flex; gap: 1.4rem; justify-content: center; font-size: .9rem; color: #444; margin: .75rem 0 .25rem; } .ic-legend span { display: inline-flex; align-items: center; gap: .45rem; }
+    .ic-k { width: 12px; height: 12px; border-radius: 50%; display: inline-block; box-sizing: border-box; } .ic-k1 { border: 2.5px solid #1f63a8; background: #fff; } .ic-k2 { background: #1f63a8; }
     .retry-chart g:hover .pc-hit, .retry-chart g:focus .pc-hit { fill: rgba(0,0,0,.05); } .retry-chart g { outline: none; }
     .res-narrow { max-width: min(936px, calc(100vw - 72px)); margin-left: auto; margin-right: auto; }
     .res-bar { display: flex; align-items: center; justify-content: center; gap: .5rem; margin: .4rem 0 1.4rem; }
@@ -533,23 +540,23 @@ Phase 2 was not run with one fixed recipe. The rollout share, the per-task share
 </tr><tr class="link" data-href="#fullchunk"><td class="set"></td>
 <td class="c chg">26</td>
 <td class="c chg">30</td>
-<td class="num q sig-null">−0.002 ± 0.020</td>
-<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.002  (95% CI -0.040 to +0.036)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="188.5" y1="20.0" x2="253.5" y2="20.0" class="bar"/><circle cx="221.0" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.004  (95% CI -0.039 to +0.047)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="189.5" y1="20.0" x2="262.2" y2="20.0" class="bar"/><circle cx="225.9" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-null">−0.003 ± 0.019</td>
+<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.003  (95% CI -0.040 to +0.035)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="188.5" y1="20.0" x2="252.3" y2="20.0" class="bar"/><circle cx="220.0" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>+0.003  (95% CI -0.040 to +0.046)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="188.5" y1="20.0" x2="261.6" y2="20.0" class="bar"/><circle cx="225.1" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">+0.4 ± 2.2</td>
-<td class="num">−73</td>
+<td class="num">+0.3 ± 2.2</td>
+<td class="num">−70</td>
 <td class="c v-null">n.s.</td>
 <td class="go"><a href="#fullchunk" aria-label="details">›</a></td>
 </tr><tr class="first link" data-href="#speed"><td class="set">Playback speed-up</td>
 <td class="c chg">1.3×</td>
 <td class="c chg">1×</td>
-<td class="num q sig-hurt">−0.069 ± 0.028</td>
-<td class="plot"><svg class="ci m-q k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.069  (95% CI -0.123 to -0.014)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="117.7" y1="20.0" x2="210.2" y2="20.0" class="bar"/><circle cx="164.0" cy="20.0" r="5" class="pt"/></svg>
-<svg class="ci m-sr k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.061  (95% CI -0.118 to -0.005)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="122.2" y1="20.0" x2="218.3" y2="20.0" class="bar"/><circle cx="170.2" cy="20.0" r="5" class="pt"/></svg>
+<td class="num q sig-hurt">−0.043 ± 0.019</td>
+<td class="plot"><svg class="ci m-q k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.043  (95% CI -0.081 to -0.005)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="153.7" y1="20.0" x2="218.2" y2="20.0" class="bar"/><circle cx="186.0" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-hurt" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.042  (95% CI -0.083 to -0.001)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="152.0" y1="20.0" x2="221.6" y2="20.0" class="bar"/><circle cx="186.8" cy="20.0" r="5" class="pt"/></svg>
 </td>
-<td class="num">−6.1 ± 2.9</td>
-<td class="num">+526</td>
+<td class="num">−4.2 ± 2.1</td>
+<td class="num">+458</td>
 <td class="c v-hurt">hurts</td>
 <td class="go"><a href="#speed" aria-label="details">›</a></td>
 </tr><tr class="link" data-href="#speed2"><td class="set"></td>
@@ -640,6 +647,17 @@ Phase 2 was not run with one fixed recipe. The rollout share, the per-task share
 <td class="num">+310</td>
 <td class="c v-null">n.s.</td>
 <td class="go"><a href="#snap" aria-label="details">›</a></td>
+</tr><tr class="first link" data-href="#bestof"><td class="set">Best-of-N</td>
+<td class="c chg">1</td>
+<td class="c chg">4</td>
+<td class="num q sig-null">−0.008 ± 0.024</td>
+<td class="plot"><svg class="ci m-q k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.008  (95% CI -0.055 to +0.040)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="175.8" y1="20.0" x2="256.5" y2="20.0" class="bar"/><circle cx="215.7" cy="20.0" r="5" class="pt"/></svg>
+<svg class="ci m-sr k-null" viewBox="0 0 360 40" preserveAspectRatio="none"><title>-0.018  (95% CI -0.075 to +0.039)</title><line x1="52.5" y1="0" x2="52.5" y2="40" class="g"/><line x1="137.5" y1="0" x2="137.5" y2="40" class="g"/><line x1="222.5" y1="0" x2="222.5" y2="40" class="z"/><line x1="307.5" y1="0" x2="307.5" y2="40" class="g"/><line x1="158.8" y1="20.0" x2="255.7" y2="20.0" class="bar"/><circle cx="207.2" cy="20.0" r="5" class="pt"/></svg>
+</td>
+<td class="num">−1.8 ± 2.9</td>
+<td class="num">−1</td>
+<td class="c v-null">n.s.</td>
+<td class="go"><a href="#bestof" aria-label="details">›</a></td>
 </tr></tbody></table></div>
 
 </div>
@@ -793,6 +811,34 @@ We therefore ran the unchanged policy twice on the same cells and averaged the t
 This interval is what we take as <i>no significant change</i>.
 A tested setting whose ΔQ falls inside roughly <strong>±0.06</strong> Q cannot be separated from run-to-run noise, which is as large as many effects claimed in the VLA literature.
 </p>
+<h4 class="title is-5 det-h" id="noise-instances">Example of noise in instances</h4>
+<p class="t-meta"><strong>How much the same instance differs between runs.</strong> Each ablation runs every task on the same 4 instances (301–304).
+Running the unchanged policy twice, the mean Q of a single instance moves by up to 0.073: instances 301 and 302 score higher in run 2, instances 303 and 304 lower.
+Over all four instances these shifts largely cancel out, leaving a difference of +0.014 ± 0.021.</p>
+<div class="ic-legend"><span><i class="ic-k ic-k1"></i>run 1</span><span><i class="ic-k ic-k2"></i>run 2</span></div>
+<div class="chart-scroll"><svg viewBox="0 0 680 256" class="inst-chart" role="img" aria-label="Q per instance in baseline run 1 and run 2">
+<line x1="130.0" x2="130.0" y1="10" y2="210" class="pc-grid"/><text x="130.0" y="228" class="ic-tick" text-anchor="middle">0.30</text>
+<line x1="232.5" x2="232.5" y1="10" y2="210" class="pc-grid"/><text x="232.5" y="228" class="ic-tick" text-anchor="middle">0.35</text>
+<line x1="335.0" x2="335.0" y1="10" y2="210" class="pc-grid"/><text x="335.0" y="228" class="ic-tick" text-anchor="middle">0.40</text>
+<line x1="437.5" x2="437.5" y1="10" y2="210" class="pc-grid"/><text x="437.5" y="228" class="ic-tick" text-anchor="middle">0.45</text>
+<line x1="540.0" x2="540.0" y1="10" y2="210" class="pc-grid"/><text x="540.0" y="228" class="ic-tick" text-anchor="middle">0.50</text>
+<text x="335.0" y="250" class="ic-axis" text-anchor="middle">Q</text>
+<text x="672" y="18" class="ic-head-r" text-anchor="end">ΔQ ± SE</text>
+<g class="ic-pt" data-tip="instance 301|run 1: Q 0.433, SR 21.4% · run 2: Q 0.479, SR 27.6% · ΔQ +0.046 ± 0.046, ΔSR +6.1 pp" tabindex="0"><rect x="0" y="16.0" width="680" height="40" class="pc-hit"/><text x="110" y="41.0" class="ic-name" text-anchor="end">instance 301</text><line x1="402.6" x2="496.9" y1="36.0" y2="36.0" class="ic-link"/><circle cx="402.6" cy="36.0" r="6" class="ic-r1"/><circle cx="496.9" cy="36.0" r="6" class="ic-r2"/><text x="672" y="41.0" class="ic-d" text-anchor="end">+0.046 ± 0.046</text></g>
+<g class="ic-pt" data-tip="instance 302|run 1: Q 0.375, SR 21.5% · run 2: Q 0.448, SR 26.9% · ΔQ +0.073 ± 0.050, ΔSR +5.4 pp" tabindex="0"><rect x="0" y="56.0" width="680" height="40" class="pc-hit"/><text x="110" y="81.0" class="ic-name" text-anchor="end">instance 302</text><line x1="283.8" x2="433.4" y1="76.0" y2="76.0" class="ic-link"/><circle cx="283.8" cy="76.0" r="6" class="ic-r1"/><circle cx="433.4" cy="76.0" r="6" class="ic-r2"/><text x="672" y="81.0" class="ic-d" text-anchor="end">+0.073 ± 0.050</text></g>
+<g class="ic-pt" data-tip="instance 303|run 1: Q 0.368, SR 21.4% · run 2: Q 0.358, SR 19.4% · ΔQ −0.010 ± 0.037, ΔSR −2.0 pp" tabindex="0"><rect x="0" y="96.0" width="680" height="40" class="pc-hit"/><text x="110" y="121.0" class="ic-name" text-anchor="end">instance 303</text><line x1="269.4" x2="248.9" y1="116.0" y2="116.0" class="ic-link"/><circle cx="269.4" cy="116.0" r="6" class="ic-r1"/><circle cx="248.9" cy="116.0" r="6" class="ic-r2"/><text x="672" y="121.0" class="ic-d" text-anchor="end">−0.010 ± 0.037</text></g>
+<g class="ic-pt" data-tip="instance 304|run 1: Q 0.401, SR 19.6% · run 2: Q 0.352, SR 16.5% · ΔQ −0.049 ± 0.033, ΔSR −3.1 pp" tabindex="0"><rect x="0" y="136.0" width="680" height="40" class="pc-hit"/><text x="110" y="161.0" class="ic-name" text-anchor="end">instance 304</text><line x1="337.1" x2="236.6" y1="156.0" y2="156.0" class="ic-link"/><circle cx="337.1" cy="156.0" r="6" class="ic-r1"/><circle cx="236.6" cy="156.0" r="6" class="ic-r2"/><text x="672" y="161.0" class="ic-d" text-anchor="end">−0.049 ± 0.033</text></g>
+<line x1="0" x2="680" y1="176.0" y2="176.0" class="ic-sep"/>
+<g class="ic-pt" data-tip="instance 301–304|run 1: Q 0.395, SR 21.0% · run 2: Q 0.409, SR 22.5% · ΔQ +0.014 ± 0.021, ΔSR +1.6 pp" tabindex="0"><rect x="0" y="176.0" width="680" height="40" class="pc-hit"/><text x="110" y="201.0" class="ic-name ic-tot" text-anchor="end">all four</text><line x1="324.8" x2="353.4" y1="196.0" y2="196.0" class="ic-link"/><circle cx="324.8" cy="196.0" r="6" class="ic-r1"/><circle cx="353.4" cy="196.0" r="6" class="ic-r2"/><text x="672" y="201.0" class="ic-d ic-tot" text-anchor="end">+0.014 ± 0.021</text></g>
+</svg></div>
+<p class="figure-caption">Mean Q over all tasks for each of the 4 instances, in the two baseline runs. Hover a row for success rates and differences.</p>
+<div class="table-container"><table class="table is-fullwidth is-striped result-table"><thead><tr><th>Instance</th><th class="num">Run 1 Q</th><th class="num">Run 1 SR</th><th class="num">Run 2 Q</th><th class="num">Run 2 SR</th><th class="num">ΔQ ± SE</th><th class="num">ΔSR (pp)</th></tr></thead><tbody>
+<tr><td>301</td><td class="num">0.433</td><td class="num">21.4%</td><td class="num">0.479</td><td class="num">27.6%</td><td class="num">+0.046 ± 0.046</td><td class="num">+6.1</td></tr>
+<tr><td>302</td><td class="num">0.375</td><td class="num">21.5%</td><td class="num">0.448</td><td class="num">26.9%</td><td class="num">+0.073 ± 0.050</td><td class="num">+5.4</td></tr>
+<tr><td>303</td><td class="num">0.368</td><td class="num">21.4%</td><td class="num">0.358</td><td class="num">19.4%</td><td class="num">−0.010 ± 0.037</td><td class="num">−2.0</td></tr>
+<tr><td>304</td><td class="num">0.401</td><td class="num">19.6%</td><td class="num">0.352</td><td class="num">16.5%</td><td class="num">−0.049 ± 0.033</td><td class="num">−3.1</td></tr>
+<tr><td><strong>301–304</strong></td><td class="num">0.395</td><td class="num">21.0%</td><td class="num">0.409</td><td class="num">22.5%</td><td class="num">+0.014 ± 0.021</td><td class="num">+1.6</td></tr>
+</tbody></table></div>
 </div>
 </details>
 <details class="test" id="replan-grp">
@@ -807,7 +853,7 @@ A tested setting whose ΔQ falls inside roughly <strong>±0.06</strong> Q cannot
 <button type="button" class="t-watch" data-video="videos/tasks/01_action_chunk_execution_horizon_13_instead_of_26_actions.mp4" data-poster="videos/tasks/01_action_chunk_execution_horizon_13_instead_of_26_actions.jpg">&#9654; Watch video</button>
 </div>
 <div class="t-opt k-null" id="fullchunk"><div class="ov">30</div>
-<div class="ol">ΔQ −0.002 ± 0.020</div>
+<div class="ol">ΔQ −0.003 ± 0.019</div>
 <div class="ovd">no change detected</div>
 </div>
 </div>
@@ -840,7 +886,7 @@ On the single “turning on radio” task, Comet reports a non-monotonic relatio
 <text x="233.4" y="31.0" class="lab" text-anchor="end">13</text>
 <g class="pt k-hurt"><title>13: −0.162  (95% CI −0.226 to −0.097)</title><rect x="245.4" y="8.0" width="320" height="36" class="hit"/><line x1="267.3" x2="385.3" y1="26.0" y2="26.0" class="ci"/><circle cx="325.9" cy="26.0" r="5" class="dot"/></g>
 <text x="233.4" y="67.0" class="lab" text-anchor="end">30 (all, no overlap)</text>
-<g class="pt k-null"><title>30 (all, no overlap): −0.002  (95% CI −0.040 to +0.036)</title><rect x="245.4" y="44.0" width="320" height="36" class="hit"/><line x1="437.4" x2="507.3" y1="62.0" y2="62.0" class="ci"/><circle cx="472.3" cy="62.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>30 (all, no overlap): −0.003  (95% CI −0.040 to +0.035)</title><rect x="245.4" y="44.0" width="320" height="36" class="hit"/><line x1="437.4" x2="506.0" y1="62.0" y2="62.0" class="ci"/><circle cx="471.3" cy="62.0" r="5" class="dot"/></g>
 </svg>
 
 <svg viewBox="0 0 680 124" class="forest m-sr" role="img" aria-label="Δ success rate against the baseline (95% CI)">
@@ -857,7 +903,7 @@ On the single “turning on radio” task, Comet reports a non-monotonic relatio
 <text x="233.4" y="31.0" class="lab" text-anchor="end">13</text>
 <g class="pt k-hurt"><title>13: −0.110  (95% CI −0.171 to −0.049)</title><rect x="245.4" y="8.0" width="320" height="36" class="hit"/><line x1="317.6" x2="429.2" y1="26.0" y2="26.0" class="ci"/><circle cx="373.4" cy="26.0" r="5" class="dot"/></g>
 <text x="233.4" y="67.0" class="lab" text-anchor="end">30 (all, no overlap)</text>
-<g class="pt k-null"><title>30 (all, no overlap): +0.004  (95% CI −0.039 to +0.047)</title><rect x="245.4" y="44.0" width="320" height="36" class="hit"/><line x1="438.5" x2="516.7" y1="62.0" y2="62.0" class="ci"/><circle cx="477.6" cy="62.0" r="5" class="dot"/></g>
+<g class="pt k-null"><title>30 (all, no overlap): +0.003  (95% CI −0.040 to +0.046)</title><rect x="245.4" y="44.0" width="320" height="36" class="hit"/><line x1="437.4" x2="516.1" y1="62.0" y2="62.0" class="ci"/><circle cx="476.7" cy="62.0" r="5" class="dot"/></g>
 </svg>
 </div>
 </div>
@@ -882,10 +928,10 @@ On the single “turning on radio” task, Comet reports a non-monotonic relatio
 <td class="num">+753 ± 199</td>
 </tr>
 <tr class="grp-first sig-null"><td class="set-cell">30 (all, no overlap)</td>
-<td class="num sig-null">−0.002 ± 0.020</td>
-<td class="num">[−0.040, +0.036]</td>
-<td class="num">+0.004 ± 0.022</td>
-<td class="num">−73 ± 153</td>
+<td class="num sig-null">−0.003 ± 0.019</td>
+<td class="num">[−0.040, +0.035]</td>
+<td class="num">+0.003 ± 0.022</td>
+<td class="num">−70</td>
 </tr>
 </tbody></table></div>
 
@@ -906,7 +952,7 @@ Moreover, the policy was fine-tuned on its own rollouts, all collected with a 26
 <div class="ol">baseline</div>
 </div>
 <div class="t-opt k-hurt" id="speed"><div class="ov">1×</div>
-<div class="ol">ΔQ −0.069 ± 0.028</div>
+<div class="ol">ΔQ −0.043 ± 0.019</div>
 <div class="ovd">hurts</div>
 <button type="button" class="t-watch" data-video="videos/tasks/02_playback_speed_up_1_instead_of_1_3.mp4" data-poster="videos/tasks/02_playback_speed_up_1_instead_of_1_3.jpg">&#9654; Watch video</button>
 </div>
@@ -938,7 +984,7 @@ It also reports that doubling the speed degraded its score.
 <line x1="433.8" x2="433.8" y1="8" y2="80.0" class="zero"/>
 <text x="353.8" y="116.0" class="axis" text-anchor="middle">ΔQ against the baseline (95% CI)</text>
 <text x="181.8" y="31.0" class="lab" text-anchor="end">1×</text>
-<g class="pt k-hurt"><title>1×: −0.069  (95% CI −0.123 to −0.014)</title><rect x="193.8" y="8.0" width="320" height="36" class="hit"/><line x1="237.0" x2="411.4" y1="26.0" y2="26.0" class="ci"/><circle cx="323.4" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-hurt"><title>1×: −0.043  (95% CI −0.081 to −0.005)</title><rect x="193.8" y="8.0" width="320" height="36" class="hit"/><line x1="304.2" x2="425.8" y1="26.0" y2="26.0" class="ci"/><circle cx="365.0" cy="26.0" r="5" class="dot"/></g>
 <text x="181.8" y="67.0" class="lab" text-anchor="end">2×</text>
 <g class="pt k-null"><title>2×: −0.034  (95% CI −0.073 to +0.004)</title><rect x="193.8" y="44.0" width="320" height="36" class="hit"/><line x1="317.0" x2="440.2" y1="62.0" y2="62.0" class="ci"/><circle cx="379.4" cy="62.0" r="5" class="dot"/></g>
 </svg>
@@ -957,7 +1003,7 @@ It also reports that doubling the speed degraded its score.
 <line x1="433.8" x2="433.8" y1="8" y2="80.0" class="zero"/>
 <text x="353.8" y="116.0" class="axis" text-anchor="middle">Δ success rate against the baseline (95% CI)</text>
 <text x="181.8" y="31.0" class="lab" text-anchor="end">1×</text>
-<g class="pt k-hurt"><title>1×: −0.061  (95% CI −0.118 to −0.004)</title><rect x="193.8" y="8.0" width="320" height="36" class="hit"/><line x1="245.0" x2="427.4" y1="26.0" y2="26.0" class="ci"/><circle cx="336.2" cy="26.0" r="5" class="dot"/></g>
+<g class="pt k-hurt"><title>1×: −0.042  (95% CI −0.083 to −0.001)</title><rect x="193.8" y="8.0" width="320" height="36" class="hit"/><line x1="301.0" x2="432.2" y1="26.0" y2="26.0" class="ci"/><circle cx="366.6" cy="26.0" r="5" class="dot"/></g>
 <text x="181.8" y="67.0" class="lab" text-anchor="end">2×</text>
 <g class="pt k-null"><title>2×: −0.021  (95% CI −0.060 to +0.018)</title><rect x="193.8" y="44.0" width="320" height="36" class="hit"/><line x1="337.8" x2="462.6" y1="62.0" y2="62.0" class="ci"/><circle cx="400.2" cy="62.0" r="5" class="dot"/></g>
 </svg>
@@ -972,10 +1018,10 @@ It also reports that doubling the speed degraded its score.
 <th class="num">Δ steps per episode</th>
 </tr></thead><tbody>
 <tr class="grp-first sig-hurt"><td class="set-cell">1×</td>
-<td class="num sig-hurt">−0.069 ± 0.028</td>
-<td class="num">[−0.123, −0.014]</td>
-<td class="num">−0.061 ± 0.029</td>
-<td class="num">+526 ± 168</td>
+<td class="num sig-hurt">−0.043 ± 0.019</td>
+<td class="num">[−0.081, −0.005]</td>
+<td class="num">−0.042 ± 0.021</td>
+<td class="num">+458</td>
 </tr>
 <tr class="grp-first sig-null"><td class="set-cell">2×</td>
 <td class="num sig-null">−0.034 ± 0.020</td>
@@ -1402,6 +1448,83 @@ It is on in the baseline and known to help, so turning it off is a positive cont
 
 <p class="t-concl"><strong>Conclusion.</strong> Turning the snap off moved Q and success rate in the expected direction, but the panel did not resolve the known effect.
 We hypothesise that the snap matters most on tasks with repeated grasp-and-release, which are a minority of the test panel, while during collection its effect was measured on train instances with many attempts on those tasks.</p>
+</div>
+</details>
+<details class="test" id="bestof">
+<summary><span class="t-name">Best-of-N</span></summary>
+<div class="t-body content">
+<div class="t-opts"><div class="t-opt base"><div class="ov">1</div>
+<div class="ol">baseline</div>
+</div>
+<div class="t-opt k-null"><div class="ov">4</div>
+<div class="ol">ΔQ −0.008 ± 0.024</div>
+<div class="ovd">no change detected</div>
+</div>
+</div>
+
+<p class="t-meta"><strong>What it does.</strong> At every query the policy samples 4 action chunks in one batched pass, each from its own noise sample, and executes one of them. The baseline samples a single chunk.
+The chunk is chosen by consensus: the four chunks are compared pairwise with dynamic time warping, chunks closer than the median pairwise distance are grouped, and the medoid of the largest group, the chunk closest to the others in it, is executed.
+The executed chunk is always one of the samples, never an average of them, so it stays a trajectory the policy actually produced.</p>
+<p class="t-why"><strong>Why we test it.</strong> Stochastic action generation makes inference-time sampling a natural way to improve action selection without retraining the policy, an idea well studied as best-of-N sampling for language models (<a href="https://arxiv.org/abs/2406.00832" target="_blank" rel="noopener">Gui et al., 2024</a>; <a href="https://arxiv.org/abs/2503.21878" target="_blank" rel="noopener">Huang et al., 2025</a>).
+Recent work on VLA action-chunk selection demonstrates that sampling multiple candidates and selecting among them can improve manipulation performance: <a href="https://jyugo-15.github.io/VGAS/" target="_blank" rel="noopener">VGAS</a> reports an increase in LIBERO-Goal success from 52.0% with single-sample inference to 60.2% with four candidates and value-guided selection (<a href="https://jyugo-15.github.io/VGAS/" target="_blank" rel="noopener">Xu et al., 2026</a>).
+Related work on Expected-Max Q-Learning likewise shows that selecting among a small number of sampled actions can improve performance over single-sample policy execution (<a href="https://proceedings.mlr.press/v139/ghasemipour21a/ghasemipour21a.pdf" target="_blank" rel="noopener">Ghasemipour et al., 2021</a>).
+Motivated by these results, we test whether a similar benefit can be obtained for our flow-matching action expert without an additional learned scorer.</p>
+<div class="metric-switch" data-show="q"><div class="metric-toggle t-toggle" role="group" aria-label="Metric"><button type="button" class="is-active" data-metric="q" aria-pressed="true">ΔQ</button><button type="button" data-metric="sr" aria-pressed="false">Δ success rate</button></div>
+<div class="chart-scroll"><svg viewBox="0 0 680 88" class="forest m-q" role="img" aria-label="ΔQ against the baseline (95% CI)">
+<line x1="222.7" x2="222.7" y1="8" y2="44.0" class="grid"/>
+<text x="222.7" y="60.0" class="tick" text-anchor="middle">-0.10</text>
+<line x1="302.7" x2="302.7" y1="8" y2="44.0" class="grid"/>
+<text x="302.7" y="60.0" class="tick" text-anchor="middle">-0.05</text>
+<line x1="382.7" x2="382.7" y1="8" y2="44.0" class="grid"/>
+<text x="382.7" y="60.0" class="tick" text-anchor="middle">+0</text>
+<line x1="462.7" x2="462.7" y1="8" y2="44.0" class="grid"/>
+<text x="462.7" y="60.0" class="tick" text-anchor="middle">+0.05</text>
+<line x1="542.7" x2="542.7" y1="8" y2="44.0" class="grid"/>
+<text x="542.7" y="60.0" class="tick" text-anchor="middle">+0.10</text>
+<line x1="382.7" x2="382.7" y1="8" y2="44.0" class="zero"/>
+<text x="382.7" y="80.0" class="axis" text-anchor="middle">ΔQ against the baseline (95% CI)</text>
+<text x="210.7" y="31.0" class="lab" text-anchor="end">vs baseline</text>
+<g class="pt k-null"><title>vs baseline: −0.008  (95% CI −0.055 to +0.040)</title><rect x="222.7" y="8.0" width="320" height="36" class="hit"/><line x1="294.7" x2="446.7" y1="26.0" y2="26.0" class="ci"/><circle cx="369.9" cy="26.0" r="5" class="dot"/></g>
+</svg>
+
+<svg viewBox="0 0 680 88" class="forest m-sr" role="img" aria-label="Δ success rate against the baseline (95% CI)">
+<line x1="222.7" x2="222.7" y1="8" y2="44.0" class="grid"/>
+<text x="222.7" y="60.0" class="tick" text-anchor="middle">-0.10</text>
+<line x1="302.7" x2="302.7" y1="8" y2="44.0" class="grid"/>
+<text x="302.7" y="60.0" class="tick" text-anchor="middle">-0.05</text>
+<line x1="382.7" x2="382.7" y1="8" y2="44.0" class="grid"/>
+<text x="382.7" y="60.0" class="tick" text-anchor="middle">+0</text>
+<line x1="462.7" x2="462.7" y1="8" y2="44.0" class="grid"/>
+<text x="462.7" y="60.0" class="tick" text-anchor="middle">+0.05</text>
+<line x1="542.7" x2="542.7" y1="8" y2="44.0" class="grid"/>
+<text x="542.7" y="60.0" class="tick" text-anchor="middle">+0.10</text>
+<line x1="382.7" x2="382.7" y1="8" y2="44.0" class="zero"/>
+<text x="382.7" y="80.0" class="axis" text-anchor="middle">Δ success rate against the baseline (95% CI)</text>
+<text x="210.7" y="31.0" class="lab" text-anchor="end">vs baseline</text>
+<g class="pt k-null"><title>vs baseline: −0.018  (95% CI −0.075 to +0.039)</title><rect x="222.7" y="8.0" width="320" height="36" class="hit"/><line x1="262.7" x2="445.1" y1="26.0" y2="26.0" class="ci"/><circle cx="353.9" cy="26.0" r="5" class="dot"/></g>
+</svg>
+</div>
+</div>
+
+<div class="table-container"><table class="table is-fullwidth is-striped result-table"><thead><tr><th class="">Compared with</th>
+
+<th class="num">ΔQ</th>
+<th class="num">95% CI</th>
+<th class="num">Δ success rate</th>
+<th class="num">Δ steps per episode</th>
+</tr></thead><tbody>
+<tr class="sig-null"><td class="">mean of both baseline runs</td>
+<td class="num sig-null">−0.008 ± 0.024</td>
+<td class="num">[−0.055, +0.040]</td>
+<td class="num">−0.018 ± 0.029</td>
+<td class="num">−1</td>
+</tr>
+</tbody></table></div>
+
+<p class="t-concl"><strong>Conclusion.</strong> Best-of-4 consensus selection yielded no measurable improvement over single-sample inference, while leaving episode length unchanged and increasing sampling cost approximately fourfold.
+Several factors may explain this result: the sampled action chunks may differ numerically without producing meaningfully different trajectories.
+Another idea is that failures may be dominated by systematic policy errors and perception or contact uncertainties that additional sampling cannot resolve.
+Thus, in the current setting, consensus-based selection does not demonstrate sufficient benefit to justify its additional inference cost.</p>
 </div>
 </details>
 <h3 class="title is-4 det-h">Data collection ablations</h3><details class="test" id="restart">
