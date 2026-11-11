@@ -90,15 +90,13 @@
     .res-tabs button { font: inherit; font-size: .92rem; font-weight: 600; color: #555; background: none; border: 0; border-radius: 999px; padding: .4rem 1rem; cursor: pointer; }
     .res-tabs button:hover { color: #222; }
     .res-tabs button[aria-selected="true"] { background: #fff; color: #1a1a1a; box-shadow: 0 1px 3px rgba(0,0,0,.15); }
-    .res-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: .4rem; }
-    @media (max-width: 700px) { .res-groups { grid-template-columns: 1fr; } }
+    .res-groups { max-width: 456px; margin: .4rem auto 0; }
     .res-gh { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #555; margin-bottom: .5rem; text-align: center; }
     .facts.res-facts { grid-template-columns: 1fr 1fr; margin: 0; }
     .res-facts .fact { padding: 1.1rem 1.2rem 1.15rem 1.4rem; }
     .res-facts .fact .ft { font-size: .78rem; }
     .res-facts .fact .fv { font-size: 3rem; line-height: 1.05; margin: .3rem 0 .4rem; }
     .res-facts .fact .fl { font-size: .85rem; }
-    .fact.f-closed { --c: #7a3fa8; }  /* same violet as the Hardware tile */
     .res-group { display: flex; flex-direction: column; }
     .res-group .res-facts { flex: 1; }
     .tip { position: fixed; z-index: 1100; pointer-events: none; background: #222; color: #fff; font-size: .78rem; line-height: 1.35; padding: .35rem .55rem; border-radius: 6px; max-width: 280px; box-shadow: 0 4px 14px rgba(0,0,0,.2); display: none; }
@@ -1916,17 +1914,6 @@ All tests use the mean of both baseline runs.</li>
 <div class="fact f-res"><div class="ft">Success Rate</div>
 <div class="fv">20%</div>
 <div class="fl">200 of 1,000 episodes solved.</div>
-</div>
-</div></div>
-<div class="res-group"><div class="res-gh">Closed test set</div>
-<div class="facts res-facts">
-<div class="fact f-closed"><div class="ft">Q-Score</div>
-<div class="fv">?</div>
-<div class="fl">not yet published.</div>
-</div>
-<div class="fact f-closed"><div class="ft">Success Rate</div>
-<div class="fv">?</div>
-<div class="fl">not yet published.</div>
 </div>
 </div></div>
 </div>
